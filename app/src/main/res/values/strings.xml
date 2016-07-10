@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FeedMe</string>
+    <string name="title_activity_acceuil">Acceuil</string>
+    
+    <!-- Start of Menu Items -->
+    <string name="menu_about">A Propos</string>
+    <string name="menu_contact">Contact</string>
+    <string name="menu_rate">Evaluez Nous</string>
+    <string name="menu_account">Votre Compte</string>
+    <!-- End of Menu Items -->
+
+    <!-- Start of Fragment Names -->
+    <string name="acceuil_fragment_text">ACCEUIL</string>
+    <string name="filtrer_fragment_text">FILTRER</string>
+    <string name="favoris_fragment_text">FAVORIS</string>
+    <string name="lecons_fragment_text">LECONS</string>
+    <!-- End of Fragment Names -->
+    
+</resources>
