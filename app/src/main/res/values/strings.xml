@@ -15,5 +15,12 @@
     <string name="favoris_fragment_text">FAVORIS</string>
     <string name="lecons_fragment_text">LECONS</string>
     <!-- End of Fragment Names -->
+
+    <!-- Start of Acceuil Fragment Literature -->
+    <string name="row_img_desc">Company Logo</string>
+    <string name="resto_name">Restaurant Name</string>
+    <string name="food_name">Food Name</string>
+    <string name="food_price">Food Price</string>
+    <!-- End of Acceuil Fragment Literature -->
     
 </resources>
