@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/relativeLayout"
+        android:padding="5dp"
+        android:background="@drawable/tchaptcheu">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/restoIcon"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/row_img_desc"
+            android:src="@drawable/un" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/restoName"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/resto_name"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/foodName"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/food_name"
+        android:background="@color/colorWhite"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/foodPrice"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/food_price"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorPrimaryLight"
+        android:gravity="center" />
+</LinearLayout>
