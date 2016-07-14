@@ -45,7 +45,7 @@
         android:id="@+id/tabs"
         app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
         app:tabBackground="@drawable/tab_color_selector"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryTrans"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"/>

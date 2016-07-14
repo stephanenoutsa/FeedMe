@@ -9,4 +9,6 @@
     <color name="colorBlack">#000</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorBackground">#EAEAEA</color>
+    <color name="colorPrimaryTrans">#AAFF6501</color>
+    <color name="colorPrimaryDarkTrans">#AAB14D02</color>
 </resources>
