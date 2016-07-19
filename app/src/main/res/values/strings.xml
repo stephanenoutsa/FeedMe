@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FeedMe</string>
     <string name="title_activity_acceuil">Acceuil</string>
-    
+
     <!-- Start of Menu Items -->
     <string name="menu_about">A Propos</string>
     <string name="menu_contact">Contact</string>
@@ -22,5 +22,9 @@
     <string name="food_name">Food Name</string>
     <string name="food_price">Food Price</string>
     <!-- End of Acceuil Fragment Literature -->
-    
+
+    <!-- Start of SingleItem Activity Literature -->
+    <string name="title_activity_single_item">Single Item</string>
+    <!-- End of SingleItem Activity Literature -->
+
 </resources>

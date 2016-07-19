@@ -20,6 +20,10 @@
         <activity
             android:name=".Acceuil"
             android:label="@string/title_activity_acceuil"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SingleItem"
+            android:label="@string/title_activity_single_item"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
