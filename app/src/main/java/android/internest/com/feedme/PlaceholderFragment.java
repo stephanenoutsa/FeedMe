@@ -1,5 +1,10 @@
 package android.internest.com.feedme;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -7,9 +12,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +33,7 @@ public class PlaceholderFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     List<Resto> restoList = new ArrayList<>();
-    ListView listView;
+    GridView gridView;
 
     public PlaceholderFragment() {
     }
@@ -61,8 +71,46 @@ public class PlaceholderFragment extends Fragment {
 
                 ListAdapter listAdapter = new CustomAdapter(getActivity(), restoList);
 
-                listView = (ListView) rootView.findViewById(R.id.restoList);
-                listView.setAdapter(listAdapter);
+                gridView = (GridView) rootView.findViewById(R.id.gridview);
+                gridView.setAdapter(listAdapter);
+
+                gridView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.relativeLayout);
+                                ImageView restoIcon = (ImageView) view.findViewById(R.id.restoIcon);
+                                TextView restoName = (TextView) view.findViewById(R.id.restoName);
+                                TextView foodName = (TextView) view.findViewById(R.id.foodName);
+                                TextView foodPrice = (TextView) view.findViewById(R.id.foodPrice);
+
+                                restoIcon.setVisibility(View.INVISIBLE);
+                                Bitmap rlBackgroundBitmap = getBitmapFromView(relativeLayout);
+                                ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                rlBackgroundBitmap.compress(Bitmap.CompressFormat.PNG, 50, bs);
+
+                                String rName = restoName.getText().toString();
+                                String fName = foodName.getText().toString();
+                                String fPrice = foodPrice.getText().toString();
+
+                                // Get image from ImageView and pass to next activity
+                                restoIcon.setVisibility(View.VISIBLE);
+                                restoIcon.buildDrawingCache();
+                                Bitmap restoIconBitmap = restoIcon.getDrawingCache();
+                                ByteArrayOutputStream bs1 = new ByteArrayOutputStream();
+                                restoIconBitmap.compress(Bitmap.CompressFormat.PNG, 50, bs1);
+
+                                Intent intent = new Intent(getContext(), SingleItem.class);
+                                //intent.putExtras(rl);
+                                intent.putExtra("rlBackground", bs.toByteArray());
+                                intent.putExtra("rIconBitmap", bs1.toByteArray());
+                                intent.putExtra("restoName", rName);
+                                intent.putExtra("foodName", fName);
+                                intent.putExtra("foodPrice", fPrice);
+                                startActivity(intent);
+                            }
+                        }
+                );
             }
         };
 
@@ -76,5 +124,17 @@ public class PlaceholderFragment extends Fragment {
         thread.start();
 
         return rootView;
+    }
+
+    public static Bitmap getBitmapFromView(View view) {
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        Drawable bgDrawable =view.getBackground();
+        if (bgDrawable!=null)
+            bgDrawable.draw(canvas);
+        else
+            canvas.drawColor(Color.WHITE);
+        view.draw(canvas);
+        return returnedBitmap;
     }
 }
