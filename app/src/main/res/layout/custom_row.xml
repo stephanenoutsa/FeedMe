@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:id="@+id/relativeLayout"
         android:padding="5dp"
@@ -47,7 +47,7 @@
         android:id="@+id/foodPrice"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/food_price"
-        android:background="@drawable/bottom_borders"
+        android:background="@color/colorWhite"
         android:textColor="@color/colorPrimaryLight"
         android:gravity="center" />
 </LinearLayout>
