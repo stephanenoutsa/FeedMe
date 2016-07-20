@@ -42,6 +42,11 @@ public class SingleItem extends AppCompatActivity {
         TextView foodName = (TextView) findViewById(R.id.foodName);
         TextView foodPrice = (TextView) findViewById(R.id.foodPrice);
 
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Magnificent.ttf");
+        restoName.setTypeface(typeface, Typeface.BOLD);
+        foodName.setTypeface(typeface);
+        foodPrice.setTypeface(typeface);
+
         Bitmap rlBackgroundBitmap = BitmapFactory.decodeByteArray(getIntent().getByteArrayExtra("rlBackground"),
                 0, getIntent().getByteArrayExtra("rlBackground").length);
         BitmapDrawable bitmapDrawable = new BitmapDrawable(rlBackgroundBitmap);
