@@ -60,9 +60,9 @@ public class Acceuil extends AppCompatActivity {
         tabLayout.setTabTextColors(getResources().getColor(R.color.colorTextPrimary),
                 getResources().getColor(R.color.colorSelectedTab));
         tabLayout.getTabAt(0).setIcon(R.drawable.acceuil);
-        tabLayout.getTabAt(1).setIcon(R.drawable.filtrer);
-        tabLayout.getTabAt(2).setIcon(R.drawable.favoris);
-        tabLayout.getTabAt(3).setIcon(R.drawable.lecons);
+        //tabLayout.getTabAt(1).setIcon(R.drawable.filtrer);
+        tabLayout.getTabAt(1).setIcon(R.drawable.favoris);
+        tabLayout.getTabAt(2).setIcon(R.drawable.lecons);
 
     }
 
@@ -140,11 +140,11 @@ public class Acceuil extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return PlaceholderFragment.newInstance(position + 1);
+                /*case 1:
+                    return Filtrer.newInstance();*/
                 case 1:
-                    return Filtrer.newInstance();
-                case 2:
                     return Favoris.newInstance();
-                case 3:
+                case 2:
                     return Lecons.newInstance();
                 default:
                     return PlaceholderFragment.newInstance(position + 1);
@@ -153,8 +153,8 @@ public class Acceuil extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 4 total pages.
-            return 4;
+            // Show 3 total pages.
+            return 3;
         }
 
         @Override
@@ -162,11 +162,11 @@ public class Acceuil extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return getString(R.string.acceuil_fragment_text);
+                /*case 1:
+                    return getString(R.string.filtrer_fragment_text);*/
                 case 1:
-                    return getString(R.string.filtrer_fragment_text);
-                case 2:
                     return getString(R.string.favoris_fragment_text);
-                case 3:
+                case 2:
                     return getString(R.string.lecons_fragment_text);
             }
             return null;
