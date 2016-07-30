@@ -3,23 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="android.internest.com.feedme.Acceuil">
     <item
-        android:id="@+id/go_to_about"
+        android:id="@+id/search"
         android:orderInCategory="1"
+        android:title="@string/menu_search"
+        android:icon="@android:drawable/ic_search_category_default"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/basket"
+        android:orderInCategory="2"
+        android:title="@string/menu_basket"
+        android:icon="@android:drawable/ic_popup_reminder"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/go_to_about"
+        android:orderInCategory="3"
         android:title="@string/menu_about"
         app:showAsAction="never" />
     <item
         android:id="@+id/go_to_contact"
-        android:orderInCategory="2"
+        android:orderInCategory="4"
         android:title="@string/menu_contact"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_item_rate"
-        android:orderInCategory="3"
+        android:orderInCategory="5"
         android:title="@string/menu_rate"
         app:showAsAction="never" />
     <item
         android:id="@+id/go_to_account"
-        android:orderInCategory="4"
+        android:orderInCategory="6"
         android:title="@string/menu_account"
         app:showAsAction="never" />
 </menu>
