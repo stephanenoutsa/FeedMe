@@ -67,6 +67,10 @@ public class Acceuil extends AppCompatActivity {
     }
 
     ////////////Intents for menu items////////////
+    public void onClickBasket() {
+
+    }
+
     public void onClickAbout() {
 
     }
@@ -100,6 +104,16 @@ public class Acceuil extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        if(id == R.id.search) {
+            onSearchRequested();
+            return true;
+        }
+
+        if(id == R.id.basket) {
+            onClickBasket();
+            return true;
+        }
+
         if (id == R.id.go_to_about) {
             onClickAbout();
             return true;
