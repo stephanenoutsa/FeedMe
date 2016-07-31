@@ -6,13 +6,13 @@
         android:id="@+id/search"
         android:orderInCategory="1"
         android:title="@string/menu_search"
-        android:icon="@android:drawable/ic_search_category_default"
+        android:icon="@drawable/search"
         app:showAsAction="always"/>
     <item
         android:id="@+id/basket"
         android:orderInCategory="2"
         android:title="@string/menu_basket"
-        android:icon="@android:drawable/ic_popup_reminder"
+        android:icon="@drawable/basket"
         app:showAsAction="always"/>
     <item
         android:id="@+id/go_to_about"
